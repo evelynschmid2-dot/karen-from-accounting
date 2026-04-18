@@ -105,7 +105,7 @@
   }
 
   .info .role {
-    font-size: 12px;
+    font-size: 11.6px;
     color: var(--text2);
     font-family: 'DM Mono', monospace;
   }
@@ -202,9 +202,9 @@
   }
 
   .plug-row {
-    display: flex;
+    display: flex-end;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
 
   .plug-btn {
@@ -263,15 +263,15 @@
 <div class="page">
   <div class="header">
     <h1>Karen from Accounting</h1>
-    <p>v1.0 — A completely useless office device</p>
+    <p>v1.0 — A colleague we all have... but every body truely hates. What ever you... it's wrong.</p>
   </div>
 
   <div class="device">
     <div class="device-header">
-      <div class="avatar">KA</div>
+      <img src="karen.jpeg" class="avatar" style="object-fit: cover;">
       <div class="info">
         <div class="name">Karen Alderman</div>
-        <div class="role">Senior Specialist, Pointless Observations</div>
+        <div class="role">Happily married to Steve, three kids. Biscuit's her whole world</div>
       </div>
       <div class="status-area">
         <div class="status-dot" id="status-dot"></div>
@@ -368,7 +368,7 @@ function togglePlug() {
     btn.textContent = 'Unplug Karen';
     btn.classList.add('plugged');
     dot.classList.add('on');
-    statusEl.textContent = 'please unplug me';
+    statusEl.textContent = 'Unplug me... please. For god sake!';
     statusEl.className = 'plug-status warning';
     setText("Oh good, you turned me on. Did you hear about Biscuit?");
     clockInterval = setInterval(updateClock, 1000);
@@ -377,7 +377,7 @@ function togglePlug() {
     btn.textContent = 'Plug in';
     btn.classList.remove('plugged');
     dot.classList.remove('on');
-    statusEl.textContent = 'unplugged';
+    statusEl.textContent = "You can't even plug me in... I have to do all by myself. As always.";
     statusEl.className = 'plug-status';
     setText("Fine. I'll just sit here then.");
     if (activeBtn) { activeBtn.classList.remove('active'); activeBtn = null; }
