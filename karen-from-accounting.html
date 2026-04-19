@@ -74,14 +74,15 @@
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--border);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 14px;
     background: var(--surface);
+    align-items: center;
   }
 
   .avatar {
-    width: 46px;
-    height: 46px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background: var(--purple-bg);
     display: flex;
@@ -97,40 +98,47 @@
 
   .info { flex: 1; }
 
-  .info .name {
-    font-size: 15px;
+  .title {
+    font-size: 35px;
     font-weight: 500;
     color: var(--text);
-    margin-bottom: 2px;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
+ 
   .info .role {
     font-size: 11.6px;
     color: var(--text2);
     font-family: 'DM Mono', monospace;
+    text-align: center;
   }
 
-  .status-area {
+   .status-area {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 4px;
   }
-
+  
   .status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: var(--border);
     transition: background 0.4s ease;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 
   .status-dot.on { background: var(--green); box-shadow: 0 0 0 3px var(--green-bg); }
 
   .clock {
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-size: 20px;
     color: var(--text3);
+    align-items: right;
   }
 
   .device-body { padding: 1.5rem; }
@@ -261,23 +269,23 @@
 <body>
 
 <div class="page">
-  <div class="header">
-    <h1>Karen from Accounting</h1>
-    <p>v1.0 — A colleague we all have... but every body truely hates. What ever you... it's wrong.</p>
-  </div>
 
+  <div class="title">
+        <div class="name">Karen Alderman</div>
+      </div>
+   <div class="header">
+    <h1>From Accounting</h1>
+  
   <div class="device">
     <div class="device-header">
-      <img src="karen.jpeg" class="avatar" style="object-fit: cover;">
-      <div class="info">
-        <div class="name">Karen Alderman</div>
-        <div class="role">Happily married to Steve, three kids. Biscuit's her whole world</div>
-      </div>
       <div class="status-area">
-        <div class="status-dot" id="status-dot"></div>
         <div class="clock" id="clock"></div>
+        <div class="status-dot" id="status-dot"></div>
       </div>
-    </div>
+      <img src="karen.jpeg" class="avatar" style="object-fit: cover;">
+      <div class="info role"></div>
+          <div class="role">Happily married to Steve, three kids. Biscuit's her whole world</div> 
+      </div>
 
     <div class="device-body">
       <div class="bubble">
@@ -300,7 +308,9 @@
     </div>
   </div>
 
-  <div class="footer">Made with zero corporate approval &nbsp;·&nbsp; Patent pending (not really)</div>
+  <div class="footer">
+      <p>A colleague we all have... but every body truely hates. What ever you... it's wrong.</p>
+  </div>
 </div>
 
 <script>
